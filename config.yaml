@@ -1,0 +1,11 @@
+connector:
+  max_delta_time: '100000'
+
+source:
+  endpoint: 'your_endpoint'
+
+sink:
+  project_id: !ENV ${PROJECT_ID}
+  dataset_name: 'your_dataset'
+  table_name: 'your_table'
+  location: 'EU'

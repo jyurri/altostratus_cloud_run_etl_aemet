@@ -1,14 +1,14 @@
 import pydantic
 from pyaml_env import parse_config
 
-from cloud_run_etl_template.connector import ConnectorConfig
-from cloud_run_etl_template.sink import DummySinkConfig
-from cloud_run_etl_template.source import DummySourceConfig
+from cloud_run_elt.connector import ConnectorConfig
+from cloud_run_elt.sink import SinkConfig
+from cloud_run_elt.source import ApiSourceConfig
 
 
 class Config(pydantic.BaseModel):
-    source: DummySourceConfig
-    sink: DummySinkConfig
+    source: ApiSourceConfig
+    sink: SinkConfig
     connector: ConnectorConfig
 
 

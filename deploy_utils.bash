@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
-LOCATION=europe-west1
-SERVICE_NAME=etl-service
-PROJECT_ID='lineage-alt-test'
+LOCATION=europe-southwest1
+SERVICE_NAME=aemet-elt-service
+PROJECT_ID='data-altostratus'
 PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='get(projectNumber)')
-REPOSITORY_NAME="docker-repository"
+REPOSITORY_NAME="elt-aemet-repository"
 ROOT_PATH="${LOCATION}-docker.pkg.dev"
 IMAGE_NAME="${SERVICE_NAME}"
 IMAGE_FULL_PATH="${ROOT_PATH}/${PROJECT_ID}/${REPOSITORY_NAME}/${IMAGE_NAME}"
-SERVICE_ACCOUNT=etl-service-account
+SERVICE_ACCOUNT=data-scientist-altostratus-jyu
 SCHEDULER_SERVICE_ACCOUNT=scheduler-service-account
 PORT=5000   
-PUBSUB_TOPIC=etl-topic
-PUBSUB_SUBSCRIPTION=etl-subscription
-
+PUBSUB_TOPIC=elt-topic
+PUBSUB_SUBSCRIPTION=elt-subscription
+AEMET_API_KEY="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqeXVycmlAZ21haWwuY29tIiwianRpIjoiYTI4ZTdlMGQtZTNhZC00NGU5LWJmYTAtNjRiNmRiZGQ4YzVlIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE3MTg5ODU5MTksInVzZXJJZCI6ImEyOGU3ZTBkLWUzYWQtNDRlOS1iZmEwLTY0YjZkYmRkOGM1ZSIsInJvbGUiOiIifQ.baJ5JyuPx3L2psYPJSqo_nM-kvxksePjsWXiNxNAlME"
 
 # Infra
 
@@ -136,7 +136,7 @@ function cloud_run_deploy(){
     echo "Deploying cloud run service"
     gcloud run deploy ${SERVICE_NAME} \
         --image ${IMAGE_FULL_PATH}:latest \
-        --service-account ${SERVICE_ACCOUNT}@${PROJECT_ID}.iam.gserviceaccount.com \
+        --service-account data-scientist-altostratus-jyu@data-altostratus.iam.gserviceaccount.com \
         --region ${LOCATION} \
         --port ${PORT} \
         --no-allow-unauthenticated

@@ -1,11 +1,15 @@
 connector:
-  max_delta_time: '100000'
+  max_delta_time_hours: '168'
 
 source:
-  endpoint: 'your_endpoint'
+  endpoint: 'https://opendata.aemet.es/opendata/'
+  api_key: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqeXVycmlAZ21haWwuY29tIiwianRpIjoiYTI4ZTdlMGQtZTNhZC00NGU5LWJmYTAtNjRiNmRiZGQ4YzVlIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE3MTg5ODU5MTksInVzZXJJZCI6ImEyOGU3ZTBkLWUzYWQtNDRlOS1iZmEwLTY0YjZkYmRkOGM1ZSIsInJvbGUiOiIifQ.baJ5JyuPx3L2psYPJSqo_nM-kvxksePjsWXiNxNAlME"
 
 sink:
-  project_id: !ENV ${PROJECT_ID}
-  dataset_name: 'your_dataset'
-  table_name: 'your_table'
+  project_id: data-altostratus
+  dataset_id: 'aemet_weather_data'
+  table_name: 'weather_raw_data'
   location: 'EU'
+  timestamp_column: 'fecha'
+  first_date_to_load: '2024-06-18'
+

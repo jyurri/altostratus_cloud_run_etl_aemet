@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "cloud_run_etl_template"
+name = "cloud_run_elt_aemet"
 version = "0.1.0"
-description = "The cloud_run_etl_template package"
+description = "App for loading data from the Aemet API to BigQuery"
 readme = "README.md"
 license = "MIT"
-authors = ["Manuel Castillo <m.castillo@altostratus.es>"]
+authors = ["Francisco Javier Yurrita Coll <jyurri@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
@@ -15,6 +15,9 @@ gunicorn = "^20.1.0"
 uvicorn = {extras = ["standard"], version = "^0.17.6"}
 pandas = "^2.0.3"
 pyaml-env = "^1.2.1"
+requests = "^2.32.3"
+google-cloud-bigquery = "^3.25.0"
+pyarrow = "^16.1.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.1.2"

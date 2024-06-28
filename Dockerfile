@@ -12,7 +12,15 @@ RUN poetry config virtualenvs.create false
 # add and install python requirements
 COPY pyproject.toml ./
 COPY poetry.lock ./
-RUN poetry install --only main 
+RUN poetry install --only main
+
+
+
+# Copy the service account key file
+COPY data-altostratus-7e1e301ef7e2.json /app/service-account-file.json
+
+# Set the environment variable
+ENV GOOGLE_APPLICATION_CREDENTIALS="/app/service-account-file.json"
 
 COPY . ./
 

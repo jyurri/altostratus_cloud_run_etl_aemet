@@ -6,10 +6,10 @@ source:
   api_key: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqeXVycmlAZ21haWwuY29tIiwianRpIjoiYTI4ZTdlMGQtZTNhZC00NGU5LWJmYTAtNjRiNmRiZGQ4YzVlIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE3MTg5ODU5MTksInVzZXJJZCI6ImEyOGU3ZTBkLWUzYWQtNDRlOS1iZmEwLTY0YjZkYmRkOGM1ZSIsInJvbGUiOiIifQ.baJ5JyuPx3L2psYPJSqo_nM-kvxksePjsWXiNxNAlME"
 
 sink:
-  project_id: data-altostratus
+  project_id: data-altostratus-challenge
   dataset_id: 'aemet_weather_data'
   table_name: 'weather_raw_data'
   location: 'EU'
   timestamp_column: 'fecha'
-  first_date_to_load: '2024-06-18'
+  first_date_to_load: '2024-06-10'
 

@@ -21,7 +21,7 @@ df = source.extract_object(start_datetime=start_datetime, end_datetime=end_datet
 
 # Set up the configuration for the sink
 sink_config_data = {
-    "project_id": "data-altostratus",
+    "project_id": "data-altostratus-challenge",
     "dataset_id": "aemet_weather_data",
     "table_name": "weather_raw_data",
     "timestamp_column": "fecha",
@@ -32,7 +32,7 @@ sink_config = SinkConfig(**sink_config_data)
 sink = Sink(config=sink_config)
 
 # Load the data into BigQuery
-#sink.load_object(df)
+sink.load_object(df)
 
 print(sink.get_missing_dates_from_raw_data())
 

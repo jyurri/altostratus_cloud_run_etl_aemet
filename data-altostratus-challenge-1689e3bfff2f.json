@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "data-altostratus-challenge",
+  "private_key_id": "1689e3bfff2f5c502ded84d6102e68c9e4a30550",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEugIBADANBgkqhkiG9w0BAQEFAASCBKQwggSgAgEAAoIBAQCoQh96vi78Uflu\npQIxYjWVVc+a6fQruQBkt+jn9AGWbHCawhxERSrg9ly2sVs6waAn/m+zRJaLXP5T\nPVg9EiA9+oUA/2IQ9m4nGsoxmkvIcxOyDvevX+x+uOZIBHEvMmiPPxAvNOIrTV3o\nvSvqYj0RPSCR9OQaDgIivu/p87crd1wEyZIahMI6Ajp6yTjKo/zEiEEXL+bLfNVj\n+gsHnLTJqVVBJDjjdcjwui+HqWy8tSqaRhha/hdvRdzpamcD453fnxscUbqWiass\nBgtQxHEKmeNwpUfj6tMHQ55bXq4SCGtvp8X3SS+9J+xH3Teg8d5Ux7LucLK0BiGf\nWQlH9bnjAgMBAAECggEAH6zPA0rhSoPeGpu6tXRBFRth6U5otoBt2AgdMulnERvZ\n+PBY5OtGfrIyUvxBaebAkTbfbVaYpqS7hg0S2vBaHIDYYA8ztXDG3Nq4vKzI3nP3\nfbo+m4fJ3DNPurgHXLS3JVxgXhqtByzZ5HIUXdvfliq1QnThKhx//22Febv1PBu+\nRKFIE2w6c5/PWpRYkleWbH2gSnLaheRB8hmmEKruoEdb+2rozbTGkp73duAxhlaV\nWHbjkh7sjpm3sa47IzhsvaCl9iJWazDf2445+dhBnxnhNKOq+ea0EPMuuhCTcLwP\nnfVawmHQ1sns+txD4WW0au8bRHNQo29YMp7CcX5szQKBgQDjAZfYJaoh13PDAfhl\n393H4pr6T3fCDsCnfD3koOIAf5AbYrAZqqtb7o05rIiCqvdzB+M3GgaLbCzIoa1z\ng/whkrVVH0vgOTlFWo3ui1+g7aBwqFTo1wKuRagkY2sZtDbNnxXZvtejVYzk4uVF\nYNUkortnL0OHX5o+n5XfyDb4fQKBgQC9v6cdItGaXDjvyqiw1OvkmaI6q87S1Tlt\nnCGc4tq3C3c6NKEqQiBgN+qpxRl09QLEtz5JeBwKwux2Dh4a8iarWXLFkUiye5+T\n56Yf0d61QW6DF2TUAUMxs3DCaUJzATvBJrFCvfTL4EKGkEye+nQbPLfUcecVy/YJ\nKJlHBUhp3wKBgBERzZkzO9fPm6TOQR9n9gVRxNWNpDOzaEkvzneioVvoO63Tfepw\nKvJ+vZ/YmWs57+F2dl9uVY+mUrfDcId/JTZhEcGU2N/DbcsJRCLr2AUB2U6fWcMo\nZ8sy8bHKyALmyjgr/jihYRWnGTEc3qCY524Zzn2z0CAd0DtlRJ/PLlMBAoGAK8qQ\ncdv4Tcyc41J9LhpluqNuWmYOXIATOeW/qCp+2aHOyWMeEteiCzK8eKPhZSmqkuXL\nfT84EY+87N4DOqrKG9+P6mLGSVLYmFTs9QkFggVw0NZUUc1cyZqlGmkaidouBTy9\nyi520ZqXH+ErncEljKetsVz8PP6OcLyq60Yf2TcCf0UmcKJfjXO5TaBbadYOcVDQ\nZMxQYEGeaTPRJSVGZ2aVPljXaAH+G55WXWmFGxhfm5JFmfVd9064KcsLly8ijyxR\nWIbcdceHNhTCA77pEMNNk/R+0KDmKHRsxzRkDxZY9Ezd/Wco53vBI44I2ebs4Syj\nEHsGYkr/uUhPtdFopN8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "elt-service@data-altostratus-challenge.iam.gserviceaccount.com",
+  "client_id": "109214537324984177863",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/elt-service%40data-altostratus-challenge.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,29 +1,24 @@
-FROM python:3.10-slim 
+FROM python:3.10-slim-buster
 
-# Allow statements and log messages to immediately appear in the Knative logs
 ENV PYTHONUNBUFFERED True
-
 ENV APP_HOME /app
-WORKDIR ${APP_HOME}
+WORKDIR $APP_HOME
 
-RUN pip3 install poetry
+RUN pip install --no-cache-dir poetry
+
 RUN poetry config virtualenvs.create false
 
-# add and install python requirements
-COPY pyproject.toml ./
-COPY poetry.lock ./
-RUN poetry install --only main
+COPY pyproject.toml poetry.lock ./
+RUN poetry install --no-dev 
 
+COPY data-altostratus-challenge-1689e3bfff2f.json ./service-account-file.json
 
+ENV GOOGLE_APPLICATION_CREDENTIALS="$APP_HOME/service-account-file.json"
 
-# Copy the service account key file
-COPY data-altostratus-7e1e301ef7e2.json /app/service-account-file.json
+COPY . .
 
-# Set the environment variable
-ENV GOOGLE_APPLICATION_CREDENTIALS="/app/service-account-file.json"
-
-COPY . ./
-
+ARG PORT=8000
 EXPOSE $PORT
+
 
 CMD exec poetry run gunicorn --bind 0.0.0.0:$PORT --workers 1 --worker-class uvicorn.workers.UvicornWorker --threads 8 --timeout 0 main:app

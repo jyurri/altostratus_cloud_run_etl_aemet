@@ -11,5 +11,5 @@ sink:
   table_name: 'weather_raw_data'
   location: 'EU'
   timestamp_column: 'fecha'
-  first_date_to_load: '2024-06-10'
+  first_date_to_load: '2023-06-3'
 

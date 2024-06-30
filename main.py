@@ -1,18 +1,15 @@
 from datetime import datetime
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from fastapi.responses import JSONResponse
+from flask import Flask, request, jsonify
 from cloudops.logging.google import get_logger
-
-
 from cloud_run_elt.config import get_config
 from cloud_run_elt.connector import Connector
 from cloud_run_elt.sink import Sink
 from cloud_run_elt.source import ApiSource
+import os
 
 logger = get_logger(__name__)
 
-app = FastAPI()
+app = Flask(__name__)
 
 def get_connector() -> Connector:
     config = get_config("./config.yaml")
@@ -21,26 +18,24 @@ def get_connector() -> Connector:
     connector = Connector(config.connector, source, sink)
     return connector
 
-class LoadDataRequest(BaseModel):
-    pass
 
 
-@app.post("/load_missing_data")
-def load_missing_data(request: LoadDataRequest):
+@app.route("/load_data", methods=["POST"])
+def load_missing_data():
     rows_added = 0
     try:
         connector = get_connector()
         rows_added = connector.load_missing_data()
         if rows_added == 0:
-            return JSONResponse(status_code=202, content={"status": "No new rows added1."})
-        return {"status": f"{rows_added} rows added."}
+            return jsonify({"status": "No new rows added."}), 202
+        return jsonify({"status": f"{rows_added} rows added."})
     except Exception as e:
         logger.error(f"Error during load_missing_data load: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        return jsonify({"error": str(e)}), 500
 
-@app.get("/health")
+@app.route("/health", methods=["GET"])
 def health():
-    return {"status": "ok"}
+    return jsonify({"status": "ok"})
 
-
-
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))

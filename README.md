@@ -1,6 +1,9 @@
-# Cloud Run ETL Template
+# Cloud Run ETL from the AEMET API
 
-Everything you need to set up a Cloud Run service that runs an ETL job on a schedule.
+App that cheks the data from a bigquery raw dat; gets the missing dates and load those dates from the AEMET API.
+It has a post endpoint to load the data: load_missing_data; and a get healt endpoint.
+
+There is a config.yaml file to configure your API.
 
 ## Run locally
 

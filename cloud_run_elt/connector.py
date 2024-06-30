@@ -59,9 +59,8 @@ class Connector:
             f"Extracting and loading object data from {start_datetime}"
         )
         rows_added = 0
-        end_datetime = start_datetime + timedelta(days=1)
         try:
-            df = self.source.extract_object(start_datetime, end_datetime)
+            df = self.source.extract_object(start_datetime, start_datetime)
             if df.empty:
                 self.logger.info(f"Empty dataframe from {start_datetime}. Skipping...")
             else:
@@ -69,5 +68,5 @@ class Connector:
                 self.logger.info(f"Wrote dataframe from {start_datetime}.")
         except Exception as e:
                 self.logger.error(f"Error during data extraction or loading: {str(e)}")
-        self.logger.info(f"Completed extracting and loading data up to {end_datetime}")
+        self.logger.info(f"Completed extracting and loading data from  {start_datetime}")
         return rows_added

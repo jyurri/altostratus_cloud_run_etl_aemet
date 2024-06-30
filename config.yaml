@@ -3,7 +3,7 @@ connector:
 
 source:
   endpoint: 'https://opendata.aemet.es/opendata/'
-
+  api_key:
 
 sink:
   project_id: data-altostratus-challenge

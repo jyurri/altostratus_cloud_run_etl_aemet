@@ -3,7 +3,6 @@ connector:
 
 source:
   endpoint: 'https://opendata.aemet.es/opendata/'
-  api_key: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqeXVycmlAZ21haWwuY29tIiwianRpIjoiYTI4ZTdlMGQtZTNhZC00NGU5LWJmYTAtNjRiNmRiZGQ4YzVlIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE3MTg5ODU5MTksInVzZXJJZCI6ImEyOGU3ZTBkLWUzYWQtNDRlOS1iZmEwLTY0YjZkYmRkOGM1ZSIsInJvbGUiOiIifQ.baJ5JyuPx3L2psYPJSqo_nM-kvxksePjsWXiNxNAlME"
 
 sink:
   project_id: data-altostratus-challenge

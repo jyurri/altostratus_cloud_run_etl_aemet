@@ -14,7 +14,7 @@ COPY pyproject.toml poetry.lock ./
 
 RUN poetry install --only main
 
-COPY data-altostratus-challenge-1689e3bfff2f.json ./service-account-file.json
+COPY data-altostratus-challenge_key.json ./service-account-file.json
 
 ENV GOOGLE_APPLICATION_CREDENTIALS="$APP_HOME/service-account-file.json"
 
